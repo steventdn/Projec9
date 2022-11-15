@@ -1,0 +1,53 @@
+
+// Made this tool to help with my sta2260
+// Inputs some numbers and basic statistics (mean, maximum, minimum, sum, distance)
+class Main {
+   function void main() {
+      var Array dataSet; 
+      var int length;
+      var int i, sum, max, min, distance, variance, standardDeviation;
+
+      let length = Keyboard.readInt("How large should the data set be: ");
+      let dataSet = Array.new(length); // constructs the Data Set
+     
+      let i = 0;
+      let max = dataSet[0];
+      let min = dataSet[0];
+      
+      while (i < length) {
+         let dataSet[i] = Keyboard.readInt("Enter a number: ");
+         let sum = sum + dataSet[i];
+         let variance = variance + dataSet[i] * dataSet[i];
+         if(dataSet[i] > max){
+            let max = dataSet[i];
+         }
+         if(dataSet[i] < min){
+            let min = dataSet[i];
+         }
+         let i = i + 1;
+      }
+
+      let distance = max - min;
+
+      do Output.printString("The mean is ");
+      do Output.printInt(sum / length);
+      do Output.println();
+
+      do Output.printString("The sum is ");
+      do Output.printInt(sum);
+      do Output.println();
+
+      do Output.printString("The max is ");
+      do Output.printInt(max);
+      do Output.println();
+
+      do Output.printString("The min is ");
+      do Output.printInt(min);
+      do Output.println();
+
+      do Output.printString("The distance between the min and max value is ");
+      do Output.printInt(distance);
+      do Output.println();
+      return;
+   }
+}
